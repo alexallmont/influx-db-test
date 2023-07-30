@@ -2,7 +2,7 @@
 docker run \
     --interactive \
     --tty \
-    --mount source=foo,target=/etc/influx-db \
+    --mount source=influx-db,target=/etc/influx-db \
     --workdir /etc/influx-db \
     influx-db-test:latest \
     bash
