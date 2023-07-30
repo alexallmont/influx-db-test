@@ -39,7 +39,7 @@ RUN cmake -D INFLUXCXX_TESTING:BOOL=OFF ..
 RUN make install
 
 # Ensure that build .so is in lib path so influx-cxx libs can find cpr
-RUN export LD_LIBRARY_PATH=/usr/local/lib
+ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:/usr/local/lib"
 
 # Dynamically load entrypoint for starting influxdb service
 COPY entrypoint.sh /entrypoint.sh
